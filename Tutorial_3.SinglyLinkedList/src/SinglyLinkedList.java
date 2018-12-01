@@ -2,7 +2,7 @@
  * Skeleton code provided by Aonghus Lawlor
  * Written by Er Lin 
  */
-
+import java.lang.Exception;
 
 
 //import comp20010.SinglyLinkedList.Node;
@@ -67,7 +67,7 @@ public class SinglyLinkedList<E>
 	}
 	
 	//get node at given index
-	public Node<E> getNode(int index)
+	public Node<E> getNode(int index) throws IndexOutOfBoundsException
 	{
 		Node<E> current = head;
 		//if list is empty
@@ -189,7 +189,8 @@ public class SinglyLinkedList<E>
 	}
 	
 	//method that gets data at given index
-	public E get(int pos) {
+	public E get(int pos) throws IndexOutOfBoundsException
+	{
 		return getNode(pos).getData();
 	}
 
@@ -259,6 +260,20 @@ public class SinglyLinkedList<E>
 			temp = temp.getNext();
 		}
 		return copy;
+	}
+	//method that reverses the list
+	public void reverse() {
+		Node<E> curr = head;
+		Node<E> next;
+		Node<E> prev = null;
+				
+		while(curr != null) {
+			next = curr.getNext();
+			curr.setNext(prev);
+			prev = curr;
+			curr = next;
+		}
+		head = prev;
 	}
 
 //	public Iterator<E> iterator(){
