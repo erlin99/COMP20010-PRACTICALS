@@ -189,7 +189,7 @@ public class DoublyLinkedList<E>
 		Node<E> curr = header.getNext();
 		output += "size = " + size() + "\n";
 		for(int i = 0; i < size(); i++) {
-			output += ">" + curr.getData() + "\n";
+			output +=  ">"+ curr.getData() + "   ";
 			curr = curr.getNext();
 		}
 		return output;
