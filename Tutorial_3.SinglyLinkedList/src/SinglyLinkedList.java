@@ -2,14 +2,12 @@
  * Skeleton code provided by Aonghus Lawlor
  * Written by Er Lin 
  */
-import java.lang.Exception;
-
 
 //import comp20010.SinglyLinkedList.Node;
 
 public class SinglyLinkedList<E> 
 {
-	//Node of the singly linked list which stores:
+	//Node of the singly linked list
 	private static class Node<E> {
 
 		private E data; //reference to its data
@@ -47,14 +45,12 @@ public class SinglyLinkedList<E>
 
 	//instance variables of the SinglyLinkedList
 	private Node<E> head; // head node of the list (or null if empty)
-//	private Node<E> tail; // last node of the list (or null if empty)
 	private int size; // number of nodes in the list
 
 	//Linked list constructor 
 	public SinglyLinkedList()
 	{
 		head = null;
-//		tail = null;
 		size = 0;
 	}
 	
@@ -84,7 +80,7 @@ public class SinglyLinkedList<E>
 		}
 		else
 		{
-			for(int i = 0; i < index; i++)
+			for(int i = 0; i < index-1; i++)
 			{
 				current = current.getNext();
 			}
@@ -222,33 +218,6 @@ public class SinglyLinkedList<E>
 		}
 	}
 	
-
-
-//	//Remove the element key from the list 
-//	public void remove(String key) 
-//	{
-//		if(head == null) {
-//			throw new RuntimeException("Cannot remove the element " + key);
-//		}
-//		else if(head.getData().equals(key)) {
-//			removeFirst();
-//		}
-//		else {
-//			Node<E> prev = null;
-//			Node<E> cur = head;
-//			
-//			while(cur != null && !cur.getData().equals(key))
-//			{
-//				prev = cur;
-//				cur = cur.getNext();
-//			}
-//			
-//			prev = cur.getNext();
-//		}
-//		return;
-//	}
-
-	
 	//create a duplicate of the original single linked list 
 	public Object copy() 
 	{
@@ -276,29 +245,6 @@ public class SinglyLinkedList<E>
 		head = prev;
 	}
 
-//	public Iterator<E> iterator(){
-//		return new ListIterator<E>();
-//	}
-//	
-//	private class ListIterator<T> implements Iterator<T> 
-//	{			
-//		private Node<T> iterator;
-//		
-//		ListIterator(){
-//			iterator = (Node<T>) head;
-//		}
-//		
-//		public boolean hasNext() {
-//			return (iterator.getNext() != null);
-//		}
-//		
-//		public T next() {
-//			T data = iterator.getData();
-//			iterator = iterator.getNext();
-//			return data;
-//		}
-//	}
-
 	//Produces string representation of the contents of the list.
 	public String toString() 
 	{
@@ -308,7 +254,7 @@ public class SinglyLinkedList<E>
 
 		for(int i = 0; i < size; i++)
 		{
-			output += temp.getData() + "  ";
+			output += temp.getData() + "\n";
 			temp = temp.getNext();
 		}
 		return output;

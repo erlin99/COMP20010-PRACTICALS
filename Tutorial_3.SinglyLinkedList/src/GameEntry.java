@@ -1,56 +1,34 @@
-//package comp20010_tutorial_1;
-
-/**
- * GameEntry
- * 
- * @version 1.0 September 2017
- * 
- * @author Aonghus Lawlor
+/* GameEntry class
+ * Skeleton code provided by Aonghus Lawlor
+ * Written by Er Lin
  */
-public class GameEntry {
-	/** name of the person earning this score */
-	protected String name;
-	
-	/** the score value */
-	protected int score;
+public class GameEntry
+{
+	protected String name; //name of the player
+	protected int score; //score scored by the player
 
-	/** Constructor to create a game entry */
+	//GameEntry constructor
 	public GameEntry(String name, int score) {
 		this.name = name;
 		this.score = score;
 	}
-
-	/** Retrieves the name field */
+	//Returns the name of the player
 	public String getName() {
 		return this.name;
 	}
-
-	/** Retrieves the score field */
+	//Returns the score by the player
 	public int getScore() {
 		return this.score;
 	}
-
-	/**
-	 * Sets the name field
-	 * 
-	 * @param {String}
-	 *            name - Given a person's name
-	 */
+	//Sets the name of the player 
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	/**
-	 * Sets the score field
-	 * 
-	 * @param {int}
-	 *            score - Given the score the person got
-	 */
+	//Sets the score scored by player
 	public void setScore(int score) {
 		this.score = score; 
 	}
-
-	/** Returns a string representation of this entry */
+	//Returns a string representation of GameEntry
 	public String toString() 
 	{
 		return String.format("%10s %10s", name, score);

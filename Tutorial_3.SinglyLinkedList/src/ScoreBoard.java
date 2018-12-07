@@ -11,13 +11,14 @@ public class ScoreBoard {
 	public static void main(String[] args) 
 	{
 		// create a new scoreboard
-		SinglyLinkedList<GameEntry> scoreboard = new SinglyLinkedList();
+		SinglyLinkedList<GameEntry> scoreboard = new SinglyLinkedList<GameEntry>();
 
 		File file = new File("scores.txt");
 		try {
 			Scanner scanner = new Scanner(file);
 			while (scanner.hasNext()) {
 				String line = scanner.nextLine();
+				@SuppressWarnings("resource")
 				Scanner lineReader = new Scanner(line).useDelimiter(",\\s?+"); // comma followed by any number of spaces
 
 				// read the name and score
@@ -34,12 +35,14 @@ public class ScoreBoard {
 				}
 				else if(score > scoreboard.last().getScore() || scoreboard.size() < 10)
 				{
-					int i = 4;
-					while(score > scoreboard.get(i).getScore() && scoreboard.size() < 10)
+					int i = 0;
+					while(score < scoreboard.get(i).getScore() && i < scoreboard.size())
 					{
 						i++;
-						System.out.println(" " + i);
 					}
+					scoreboard.add(i, e);
+					if(scoreboard.size() > 10) 
+						scoreboard.removeLast();
 				}
 				lineReader.close();
 			}
@@ -48,7 +51,7 @@ public class ScoreBoard {
 		}
 		 catch (FileNotFoundException e) {
 			System.out.println("File Not Found!");
-		 }
+		}
 	}
 }
 
