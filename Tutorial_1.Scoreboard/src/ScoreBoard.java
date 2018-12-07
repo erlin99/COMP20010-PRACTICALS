@@ -73,6 +73,7 @@ public class ScoreBoard
 		return s;
 	}
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) 
 	{
 		// create a new scoreboard
