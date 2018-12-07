@@ -12,9 +12,9 @@ public class DoublyLinkedList<E>
 		//Node constructor
 		public Node(E data, Node<E> prev, Node<E> next)
 		{
-			this.data = data;
-			this.prev = prev;
-			this.next = next;
+			setData(data);
+			setPrev(prev);
+			setNext(next);
 		}
 		//Returns the data stored
 		public E getData() {
@@ -207,7 +207,7 @@ public class DoublyLinkedList<E>
 		System.out.println(ll);
 
 		ll.removeLast();
-		System.out.println(ll);
+		System.out.println(ll); 
 		
 	}
 }
